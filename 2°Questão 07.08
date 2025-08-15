@@ -7,7 +7,6 @@ int main() {
     printf("Informe um número inteiro positivo: ");
     scanf("%d", &N);
 
-    // Verificar se o número é positivo
     if (N <= 0) {
         printf("O número deve ser maior que 0!\n");
         return 1;
@@ -15,8 +14,14 @@ int main() {
 
     for (i = 1; i <= N; i++) {
         for (j = 1; j <= i; j++) {
+            if (num > N) {
+                break;
+            }
             printf("%d ", num);
             num++;
+        }
+        if (num > N) {
+            break;
         }
         printf("\n");
     }
