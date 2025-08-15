@@ -1,44 +1,47 @@
 #include <stdio.h>
 
-
-
-int main(){
+int main() {
     int num1, num2, ad, sub, multi, div, resto, t;
-
     printf("Informe o primeiro número: ");
     scanf("%d", &num1);
-
     printf("Informe o segundo número: ");
     scanf("%d", &num2);
-
-    printf("Que operacao com e você deseja realizar: \n [1]-Soma \n [2]-Subtracao \n [3]-Multiplicacao \n [4]- Divisao \n [5]-Resto \n", num1, num2);
+    printf("Que operação você deseja realizar: \n [1]-Soma \n [2]-Subtracao \n [3]-Multiplicacao \n [4]- Divisao \n [5]-Resto \n");
     scanf("%d", &t);
 
-    switch (t){
-        case 1:{
+    switch (t) {
+        case 1:
             ad = num1 + num2;
             printf("A adição é %d \n", ad);
             break;
-        }
-        case 2:{
+        case 2:
             sub = num1 - num2;
             printf("A subtração é %d \n", sub);
             break;
-        }
-        case 3:{
+        case 3:
             multi = num1 * num2;
             printf("A multiplicação é %d \n", multi);
             break;
-        }
-        case 4:{
-            div = num1 / num2;
-            printf("A divisão é %d \n", div);
+        case 4:
+            if (num2 != 0) {
+                div = num1 / num2;
+                printf("A divisão é %d \n", div);
+            } else {
+                printf("Erro: divisão por zero!\n");
+            }
             break;
-        }
-        default:{
-            resto = num1 % num2;
-            printf("O resto da divisão é %d \n", resto);
+        case 5:
+            if (num2 != 0) {
+                resto = num1 % num2;
+                printf("O resto da divisão é %d \n", resto);
+            } else {
+                printf("Erro: divisão por zero!\n");
+            }
             break;
-        }
-    };
+        default:
+            printf("Opção inválida!\n");
+            break;
+    }
+
+    return 0;
 }
